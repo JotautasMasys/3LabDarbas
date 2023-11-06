@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Scriptable;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button MC, MR, MS, mPlus, mMinus, back, clearEverything, del, plusMinus, squareRoot, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, division, procent, multiplication, oneDevidedByX, plus, minus, BtnDot, result;
@@ -66,5 +69,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         Button button=(Button) view;
+        String buttonText=button.getText().toString();
+        String dataToCalculate=calculatorScreen.getText().toString();
+
+        if(buttonText.equals("CE")) {
+            calculatorScreen.setText("");
+            return;
+        }
+        if(buttonText.equals("=")) {
+            calculatorScreen.setText(calculatorScreen.getText());
+            return;
+        }
+        if(buttonText.equals("DEL")) {
+            dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length()-1);
+        }else{
+            dataToCalculate=dataToCalculate+buttonText;
+        }
+        calculatorScreen.setText(dataToCalculate);
+
+        String finalResult = getResult(dataToCalculate);
+
+        if(!finalResult.equals("ERROR")){
+            calculatorScreen.setText(finalResult);
+        }
+
     }
+
+    String getResult(String data) {
+        try {
+            Context context = Context.enter();
+            context.setOptimizationLevel(-1);
+            Scriptable scriptable = context.initStandardObjects();
+            String finalResult = context.evaluateString(scriptable, data, "Javascript", 1, null).toString();
+            if(finalResult.endsWith(".0")){
+                finalResult = finalResult.replace(".0", "");
+            }
+            return finalResult;
+        }catch (Exception e){
+            return "EROR";
+        }
+    }
+
 }
