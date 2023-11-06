@@ -222,7 +222,7 @@
                         android:textSize="25sp" />
 
                     <Button
-                        android:id="@+id/n10"
+                        android:id="@+id/n2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -238,7 +238,7 @@
                     android:weightSum="0">
 
                     <Button
-                        android:id="@+id/n11"
+                        android:id="@+id/n10"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -267,7 +267,7 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/nx"
+                        android:id="@+id/n1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -275,11 +275,11 @@
                         android:textSize="25sp" />
 
                     <Button
-                        android:id="@+id/ny"
+                        android:id="@+id/BtnDot"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Sq"
+                        android:text="."
                         android:textSize="25sp" />
                 </LinearLayout>
 
@@ -289,7 +289,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <Button
-                        android:id="@+id/nxx"
+                        android:id="@+id/plus"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -297,7 +297,7 @@
                         android:textSize="25sp" />
 
                     <Button
-                        android:id="@+id/nyy"
+                        android:id="@+id/minus"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -311,7 +311,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <Button
-                        android:id="@+id/nr"
+                        android:id="@+id/result"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="="
